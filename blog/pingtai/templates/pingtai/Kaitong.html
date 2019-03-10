@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    span{
+        font-size: 18px;
+    }
+    .realname{
+        width: 300px;
+        height: 50px;
+    }
+    .hobby{
+        width:500px;
+        height: 100px;
+    }
+    button{
+        width:100px ;
+        height: 40px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+<form action="/Kaitong/" method="post">
+    {% csrf_token %}
+    {{ form.u }}
+    {{ form.sh }}
+    <span>真实姓名:</span><br>
+    {{ form.realname }}<br>
+    <span>公司名称:</span><br>
+    {{ form.company }}<br>
+    <span>职位:</span><br>
+    {{ form.position }}<br>
+    <span>爱好:</span><br>
+    {{ form.hobby }}<br>
+    <span>申请缘由:</span><br>
+    {{ form.reason }}<br>
+    <button>提交</button>
+</form>
+</body>
+</html>

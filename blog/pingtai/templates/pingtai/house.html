@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pingtai/css/bootstrap.css' %}">
+</head>
+<style>
+    .container{
+        border:1px solid #ccc;
+        margin-top: 10px;
+        padding:20px;
+        background-image: url("{% static '/pingtai/img/house2.jpg' %}");
+    }
+    h1{
+        margin:0 auto;
+        text-align: center;
+    }
+    .aa{
+        color: #000;
+        font-size: 21px;
+    }
+    .bb{
+        color: #0ff39c;
+    }
+    .cc{
+        width: 100px;
+    }
+</style>
+<body>
+<h1>房价预测查询</h1>
+<div class="container">
+<form action="/House/" method="post">
+    {% csrf_token  %}
+    <span class="aa">选择地区：</span>
+    <select class="form-control" name="dist">
+      <option value="no">朝阳</option>
+      <option value="0">东城</option>
+      <option value="1">丰台</option>
+      <option value="2">海淀</option>
+      <option value="3">石景山</option>
+      <option value="4">西城</option>
+    </select><br>
+    <span class="aa">层级：</span>
+     <select class="form-control" name="floor">
+      <option value="no">高层</option>
+      <option value="5">中层</option>
+      <option value="6">底层</option>
+    </select><br>
+    <span class="aa">几室：</span>
+    <select class="form-control" name="roomnum">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select><br>
+    <span class="aa">几厅：</span>
+    <select class="form-control" name="halls">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select><br>
+    <div class="form-group">
+        <span class="aa">面积：</span>
+        <input type="text" class="form-control" id="exampleInputName2" name="area">
+    </div>
+    <span class="aa">是否靠近地铁：</span>
+    <label class="radio-inline">
+        <input type="radio" name="subway" id="inlineRadio1" value="1"> 是
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="subway" id="inlineRadio2" value="0"> 否
+    </label>
+    <span class="aa">是否靠近学校：</span>
+    <label class="radio-inline">
+        <input type="radio" name="school" id="inlineRadio1" value="1"> 是
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="school" id="inlineRadio2" value="0"> 否
+    </label>
+    <button class="cc">查询</button>
+</form>
+<span class="aa">查询结果为：<span class="aa bb">{{ result }} </span>元</span>
+</div>
+</body>
+</html>

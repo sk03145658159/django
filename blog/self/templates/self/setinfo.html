@@ -1,0 +1,25 @@
+ {% extends 'moban/mobanHtml.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'self/css/setinfo.css' %}" rel="stylesheet">
+{% endblock %}
+ {% block main %}
+<div class="blogitem">
+      <h1>设置个人信息</h1>
+    <form action="">
+      <div class="son">
+          <span>昵称：</span><input type="text" placeholder="{{ user.username }}">
+      </div>
+        <div class="son">
+          <span>联系方式：</span><input type="text" placeholder="{{ user.tel }}">
+      </div>
+    <div class="son">
+          <span>邮箱地址：</span><input type="email" placeholder="{{ user.email }}">
+      </div>
+    <div class="son">
+          <span>用户密码：</span><input type="password" placeholder="********">
+      </div>
+        <button>提交</button>
+    </form>
+</div>
+{% endblock %}

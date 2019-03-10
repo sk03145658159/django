@@ -1,0 +1,14 @@
+ {% for item in cate %}
+                    <ul>
+                        <span>{{ item.name }}：</span>
+                        {% for obj in item.keyword_set.all %}
+                            <li>{{ obj.name }}</li>
+                        {% endfor %}
+                    </ul>
+{#                <li><a href="">娱乐</a></li>#}
+{#                <li><a href="">搞笑</a></li>#}
+{#                 <li><a href="">游戏</a></li>#}
+{#                 <li><a href="">生活</a></li>#}
+{#                 <li><a href="">美食</a></li>#}
+{#                 <li><a href="">其他</a></li>#}
+                {% endfor %}

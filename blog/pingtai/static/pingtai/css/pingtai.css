@@ -1,0 +1,206 @@
+*{
+    padding:0;
+    margin: 0;
+    list-style:none;
+}
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+body{
+    width: 1600px;
+    margin: 0 auto;
+    background: #e4e9ee;
+}
+.title{
+    width:100%;
+    height: 50px;
+}
+.title .left{
+    width:300px;
+    height: 50px;
+    float: left;
+    color: #666;
+    line-height: 50px;
+    font-size: 16px;
+       opacity: .5;
+}
+.title .left span{
+    font-size: 23px;
+    color:#13E8E9 ;
+    font-weight: bold;
+}
+.title .right{
+    float:right;
+     height: 50px;
+     color: #666;
+    line-height: 50px;
+    font-size: 13px;
+    opacity: .5;
+}
+.title .right span a{
+    color:#666;
+    margin:0 5px;
+}
+.title .right span a:hover{
+    color: #e94547;
+    border-bottom: 1px solid #e94547;
+}
+#keke{
+    width:100%;
+    height: 150px;
+    opacity:.8;
+    position: relative;
+}
+#keke li{
+    font-size:21px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#keke li a{
+    color: #ffe1f3;
+    margin:0 10px;
+}
+#keke li a:hover{
+    color: #e9c0e9;
+}
+#keke li a:nth-of-type(1){
+    margin-left:0;
+}
+.mainbox{
+    width:100%;
+    height: auto;
+    margin-top:10px;
+}
+.mainbox .left{
+    width:200px;
+    height: auto;
+    /*margin-right: 50px;*/
+    float:left;
+}
+.mainbox .left ul{
+    width:100%;
+    height: 100%;
+    background: #5e5e5e;
+}
+.mainbox .left ul li{
+    margin: 5px 0;
+    width:170px;
+    padding-left:30px;
+     /*text-align: center;*/
+}
+.mainbox .left ul li:hover{
+    background: #fff;
+    cursor: pointer;
+}
+.mainbox .left ul li:hover a{
+    color:#000000;
+}
+.mainbox .left ul li a{
+    text-align: center;
+    color:#fff;
+}
+.mainbox .moddle{
+    width:1150px;
+    height: auto;
+    float: left;
+    padding-left: 20px;
+    margin-right: 30px;
+}
+.mainbox .moddle span{
+    font-size: 20px;
+}
+.mainbox .moddle .con{
+    width: 1150px;
+    height: 200px;
+    background: #fff;
+    margin-top:10px;
+    padding:5px;
+}
+.mainbox .moddle .con .left1{
+    width:20%;
+    height: 100%;
+    float: left;
+}
+.mainbox .moddle .con .left1 .photo{
+    width:100%;
+    height: 100%;
+}
+.mainbox .moddle .con .right1{
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.mainbox .moddle .con .right1 h4 a{
+    margin-right: 10px;
+}
+.mainbox .moddle .con .right1 span{
+    color:red;
+    font-weight: normal;
+}
+.mainbox .moddle .con .right1 p{
+    margin-top: 5px;
+}
+#aa{
+    font-size: 16px;
+    color:#ccc;
+}
+.mainbox .moddle .pages{
+    margin:10px 0;
+}
+.mainbox .moddle .pages a{
+    margin: 0 5px;
+    color:#666;
+}
+.mainbox .moddle .pages a:hover{
+    color:#e94547;
+}
+.mainbox .right{
+    width:200px;
+    height: auto;
+    float:left;
+    margin-top: 10px;
+}
+.mainbox .right .son{
+    width:100%;
+    height: 500px;
+    background-color: #5e5e5e;
+    margin-top: 30px;
+}
+.mainbox .right .son1{
+    padding: 30px;
+    padding-left:40px;
+    width:130px;
+    height: 140px;
+    background: #ffe7f8;
+}
+.mainbox .right .son1 span{
+    font-size: 20px;
+    color: #fabdff;
+    text-align: center;
+}
+.mainbox .right .son1 a{
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align:center;
+    color:#fff;
+    background-color: #9bf1f4;
+    line-height: 30px;
+    margin-top: 30px;
+}
+.mainbox .right .son1 .shenhe{
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align:center;
+    color:#fff;
+    background-color: yellow;
+    line-height: 30px;
+    margin-top: 30px;
+}

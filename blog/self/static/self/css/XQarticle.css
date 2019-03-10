@@ -1,0 +1,40 @@
+#page-wrapper{
+    background-color: #F0F0F0;
+    padding-top: 20px;
+}
+.con2{
+    width:800px;
+    height: auto;
+    margin:0 auto;
+    background-color: #fff;
+    padding:10px;
+}
+.con2 .title{
+    width: 100%;
+    height: 50px;
+     font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    color:#ccc;
+}
+.con2 .time{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: right;
+    color:#00CC99;
+}
+.con2 .artcon{
+     width: 100%;
+    height: auto;
+     font-size: 16px;
+}
+.con2 .key{
+    color:#ccc;
+     width: 100%;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+}

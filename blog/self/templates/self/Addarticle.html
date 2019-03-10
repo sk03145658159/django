@@ -1,0 +1,40 @@
+{% extends 'moban/guanliMoban.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'self/css/addArticle.css' %}">
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script type="text/javascript" src="{% static 'self/js/Getkey.js' %}"></script>
+{% endblock %}
+{% block main %}
+        <div id="page-wrapper">
+         <h1>发表文章</h1>
+            <form action="{% url 'self:Addarticle' %}" id="form1" method="post">
+                {% csrf_token %}
+                {{ form.a }}
+                <span class="span1">
+                    {{ form.title.label }}:
+                </span><br>
+                {{ form.title }}<br>
+                <span class="span1">
+                    {{ form.c.label }}:
+                </span><br>
+                {{ form.c }}<br>
+                <span class="span1">
+                    {{ form.k.label }}:
+                </span><br>
+                {{ form.k }}<br>
+                 <span class="span1">
+                    {{ form.con.label }}:
+                </span><br>
+                {{ form.con }}<br>
+                <span class="span1">
+                    {{ form.status.label }}:
+                </span>
+                {{ form.status }}<br>
+                <button>提交发表</button>
+            </form>
+       </div>
+{% endblock %}

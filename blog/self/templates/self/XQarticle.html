@@ -1,0 +1,24 @@
+{% extends 'moban/guanliMoban.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'self/css/XQarticle.css' %}">
+{% endblock %}
+{% block main %}
+        <div id="page-wrapper">
+            <div class="con2">
+                <div class="title">
+                    {{ article.title }}
+                </div>
+                <div class="time">
+                    发布时间：{{ article.c_time }}
+                </div>
+                <div class="artcon">
+                    {{ article.con | safe }}
+                </div>
+                <dev class="key">
+                    关键字：{{ article.k }}
+                </dev>
+            </div>
+
+       </div>
+{% endblock %}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>咳咳平台</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/pingtai/css/pingtai.css' %}">
+</head>
+<style>
+    #keke{
+        background-image: url("{% static '/pingtai/img/chang.gif' %}");
+    }
+    #house{
+        position: absolute;
+        top:10px;
+        left:0;
+        right:0;
+        margin: 0 auto;
+        width: 500px;
+        height: 100px;
+        background-image: url("{% static '/pingtai/img/house.jpg' %}");
+        background-size: 500px 100px;
+        opacity: .8;
+    }
+    #house span{
+        color: #fc9ac7;
+        font-size: 21px;
+        font-weight: 600;
+    }
+     #house .option{
+         margin-top:70px;
+         float:right;
+     }
+</style>
+<body>
+<nav>
+    <div class="title">
+        <div class="left">
+            <span>咳咳</span>分享心情和最美的你...
+        </div>
+        <div class="right">
+            {% if user %}
+                <span>
+                   欢迎<span style="color: #00a2d4;font-size: 18px">{{ user.username }}</span>|<a href="{% url 'self:index' %}">我的咳咳</a>|<a href="">短消息</a>|<a href="">设置</a>|<a href="{% url 'pingtai:Exitlogin' %}">注销</a>
+                </span>
+            {% else %}
+                <span>
+                    <a href="{% url 'auth:login' %}">登录</a>|<a href="{% url 'auth:register' %}">注册咳咳</a>
+                </span>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<header>
+    <div id="keke">
+        <li>
+            <a href="">园子</a><a href="">新闻</a><a href="">博问</a><a href="">闪存</a><a href="">小组</a><a href="">收藏</a><a
+                href="">招聘</a><a href="">班级</a><a href="">招聘</a>
+        </li>
+    </div>
+</header>
+<main>
+    <div class="mainbox">
+        <div class="left">
+            <ul id="aside">
+                {% include 'pingtai_moban/index_list.html' %}
+            </ul>
+        </div>
+        <div class="moddle">
+            <span>最新分享</span>
+                {% for item in ticle %}
+                <div class="con">
+                    <div class="left1">
+                        <div class="photo">
+                            <img src="{% static '/pingtai/img/11.jpg' %}" alt="" height="200" width="200">
+                        </div>
+                    </div>
+                    <div class="right1">
+                        <h4><a href="{% url 'pingtai:detial' item.id %}">{{ item.title }}</a><span>[置顶]</span></h4>
+                        <span id="aa">{{ item.u_time }}</span>
+                        <p>{{ item.con | striptags | slice:":800" }}...</p>
+                    </div>
+                </div>
+                {% endfor %}
+{#            <div class="con"></div>#}
+{#            <div class="con"></div>#}
+{#            <div class="con"></div>#}
+{#            <div class="con"></div>#}
+            <div class="pages"><a href="">1</a><a href="#" hidefocus="">2</a><a href="#" hidefocus="">3</a><a href="#" class="next">下一页&gt;&gt;</a></div>
+        </div>
+        <div class="right">
+            {% if user.userinfo.sh == 0 %}
+            <div class="son1">
+                <span>遇见更多朋友</span>
+                <a href="{% url 'pingtai:Kaitong' %}">开通博客</a>
+            </div>
+            {% elif user.userinfo.sh == 1 %}
+                <div class="son1">
+                <span>遇见更多朋友</span>
+                <a href="{% url 'pingtai:Kaitong' %}" class="shenhe">博客审核中</a>
+               </div>
+            {% elif user.userinfo.sh == 2 %}
+            <div class="son1">
+            <span>你已经加入了咳咳大家庭！一起分享吧！</span>
+           </div>
+           {% elif user.c == 0 %}
+            <div class="son1">
+            <span>遇见更多朋友</span>
+            <a href="{% url 'pingtai:Kaitong' %}">开通博客</a>
+           </div>
+            {% endif %}
+            <div class="son">
+                <img src="{% static '/pingtai/img/guanggao1.jpg' %}" alt="" width="200" height="500">
+            </div>
+            <div class="son">
+                 <img src="{% static '/pingtai/img/guanggao2.png' %}" alt="" width="200" height="500">
+            </div>
+        </div>
+    </div>
+</main>
+{% if result == 1 %}
+<div class="house" id="house">
+    <span>想买房吗？还不快来看看!!!</span>
+    <div class="option">
+        <button><a href="{% url 'pingtai:House' %}">去看看</a></button>
+        <button id="exit">算了，下次再说</button>
+    </div>
+</div>
+{% endif %}
+</body>
+</html>
+<script src="{% static 'pingtai/js/jquery-3.2.1.js' %}"></script>
+<script>
+$("#exit").on('click',function () {
+    $("#house").css({'display':'none'})
+})
+</script>

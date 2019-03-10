@@ -1,0 +1,39 @@
+{% extends 'moban/guanliMoban.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'self/css/addArticle.css' %}">
+{#<link rel="stylesheet" href="{% static 'self/css/bootstrap.css' %}">#}
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}
+{% block main %}
+        <div id="page-wrapper">
+         <h1>文章管理</h1>
+            <table class="table table-striped">
+                <tr>
+                    <th>标题</th>
+                    <th>分类</th>
+                    <th>关键字</th>
+                    <th>内容</th>
+                    <th>状态</th>
+                    <th>发布时间</th>
+                    <th>操作</th>
+                </tr>
+                {% for item in articles %}
+                     <tr>
+                        <th>{{ item.title }}</th>
+                        <th>{{ item.c }}</th>
+                        <th>{{ item.k }}</th>
+                        <th>{{ item.con }}</th>
+                         <th>{{ item.status }}</th>
+                         <th>{{ item.c_time }}</th>
+                        <th><a href="{% url 'self:Delarticle' item.id %}">删除</a>
+                            <a href="{% url 'self:XQarticle' item.id %}">查看详情</a>
+                        </th>
+                    </tr>
+                {% endfor %}
+            </table>
+       </div>
+{% endblock %}

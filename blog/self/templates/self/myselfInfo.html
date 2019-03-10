@@ -1,0 +1,33 @@
+{% extends 'moban/guanliMoban.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'self/css/setinfo.css' %}" rel="stylesheet">
+{% endblock %}
+{% block main %}
+      <div id="page-wrapper">
+      <div class="blogitem">
+         <h1>设置个人信息</h1>
+          <span>头像：</span>
+          <img src="{{ user.img }}" alt="" style="height: 200px;width: 200px;display: block">
+            <form action="/self/upload/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+               <div class="son" style="height: 80px">
+                   <input type="file" name="img" id="img">
+              </div>
+              <div class="son">
+                  <span>昵称：</span><input type="text" value="{{ user.username }}" name="name">
+              </div>
+                <div class="son">
+                  <span>联系方式：</span><input type="text" value="{{ user.tel }}" name="tel">
+              </div>
+            <div class="son">
+                  <span>邮箱地址：</span><input type="email" value="{{ user.email }}" name="email">
+              </div>
+            <div class="son">
+                  <span>用户密码：</span><input type="password" value="{{ user.password }}" name="password">
+              </div>
+                <button>提交</button>
+            </form>
+      </div>
+       </div>
+{% endblock %}
